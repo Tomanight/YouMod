@@ -439,3 +439,18 @@
     [self.navigationButton setSizeWithPaddingAndInsets:NO];
 }
 %end
+
+/* Needs to make the settings for this first 
+// Startup Tab
+BOOL isTabSelected = NO;
+%hook YTPivotBarViewController
+- (void)viewDidAppear:(BOOL)animated {
+    %orig;
+    if (!isTabSelected) {
+        NSArray *pivotIdentifiers = @[@"FEwhat_to_watch", @"FEexplore", @"FEshorts", @"FEsubscriptions", @"FElibrary"];
+        [self selectItemWithPivotIdentifier:pivotIdentifiers[ytlInt(@"pivotIndex")]];
+        isTabSelected = YES;
+    }
+}
+%end
+*/
