@@ -218,43 +218,43 @@ static BOOL isDarkMode(UIView *view) {
     if (IS_ENABLED(OLEDTheme) && isDarkMode2) {
         return [UIColor blackColor];
     }
-    return %orig;
+    return [UIColor whiteColor];
 }
 - (UIColor *)brandBackgroundPrimary {
     if (IS_ENABLED(OLEDTheme) && isDarkMode2) {
         return [UIColor blackColor];
     }
-    return %orig;
+    return [UIColor whiteColor];
 }
 - (UIColor *)brandBackgroundSecondary {
     if (IS_ENABLED(OLEDTheme) && isDarkMode2) {
         return [UIColor blackColor];
     }
-    return %orig;
+    return [UIColor whiteColor];
 }
 - (UIColor *)background1 {
     if (IS_ENABLED(OLEDTheme) && isDarkMode2) {
         return [UIColor blackColor];
     }
-    return %orig;
+    return [UIColor whiteColor];
 }
 - (UIColor *)background2 {
     if (IS_ENABLED(OLEDTheme) && isDarkMode2) {
         return [UIColor blackColor];
     }
-    return %orig;
+    return [UIColor whiteColor];
 }
 - (UIColor *)background3 {
     if (IS_ENABLED(OLEDTheme) && isDarkMode2) {
         return [UIColor blackColor];
     }
-    return %orig;
+    return [UIColor whiteColor];
 }
 - (UIColor *)baseBackground {
     if (IS_ENABLED(OLEDTheme) && isDarkMode2) {
         return [UIColor blackColor];
     }
-    return %orig;
+    return [UIColor whiteColor];
 }
 %end
 
