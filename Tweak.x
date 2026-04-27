@@ -215,20 +215,19 @@ static BOOL isDarkMode(UIView *view) {
     }
     return %orig;
 }
-/*
 - (UIColor *)brandBackgroundSecondary {
     if (IS_ENABLED(OLEDTheme) && isDarkMode2) {
         return [UIColor blackColor];
     }
     return %orig;
 }
+/*
 - (UIColor *)background1 {
     if (IS_ENABLED(OLEDTheme) && isDarkMode2) {
         return [UIColor blackColor];
     }
     return %orig;
 }
-*/
 - (UIColor *)background2 {
     if (IS_ENABLED(OLEDTheme) && isDarkMode2) {
         return [UIColor blackColor];
@@ -247,6 +246,7 @@ static BOOL isDarkMode(UIView *view) {
     }
     return %orig;
 }
+*/
 %end
 
 %hook YTCinematicContainerView
