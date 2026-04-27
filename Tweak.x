@@ -165,27 +165,26 @@ static BOOL isDarkMode(UIView *view) {
 // OLED theme - implemented by @Tonwalter888
 %hook YTColor
 + (UIColor *)black0 {
-    return IS_ENABLED(OLEDTheme) ? [self blackPure] : %orig;
+    return IS_ENABLED(OLEDTheme) ? [UIColor blackColor] : %orig;
 }
 
 + (UIColor *)black1 {
-    return IS_ENABLED(OLEDTheme) ? [self blackPure] : %orig;
+    return IS_ENABLED(OLEDTheme) ? [UIColor blackColor] : %orig;
 }
 
 + (UIColor *)black2 {
-    return IS_ENABLED(OLEDTheme) ? [self blackPure] : %orig;
+    return IS_ENABLED(OLEDTheme) ? [UIColor blackColor] : %orig;
 }
 
 + (UIColor *)black3 {
-    return IS_ENABLED(OLEDTheme) ? [self blackPure] : %orig;
+    return IS_ENABLED(OLEDTheme) ? [UIColor blackColor] : %orig;
 }
 
 + (UIColor *)black4 {
-    return IS_ENABLED(OLEDTheme) ? [self blackPure] : %orig;
+    return IS_ENABLED(OLEDTheme) ? [UIColor blackColor] : %orig;
 }
 %end
 
-/*
 // Untested
 %hook YTPivotBarView
 - (UIView *)contentView {
@@ -194,12 +193,11 @@ static BOOL isDarkMode(UIView *view) {
     return orig;
 }
 %end
-*/
 
-// %hook YTCommonColorPalette
-// - (UIColor *)brandBackgroundSolid { return IS_ENABLED(OLEDTheme) ? [UIColor blackColor] : %orig; }
-// - (UIColor *)brandBackgroundPrimary { return IS_ENABLED(OLEDTheme) ? [UIColor blackColor] : %orig; }
-// %end
+%hook YTCommonColorPalette
+- (UIColor *)brandBackgroundSolid { return IS_ENABLED(OLEDTheme) ? [UIColor blackColor] : %orig; }
+- (UIColor *)brandBackgroundPrimary { return IS_ENABLED(OLEDTheme) ? [UIColor blackColor] : %orig; }
+%end
 
 // _ASDisplayView filters
 // This hook can hide A LOT of things
