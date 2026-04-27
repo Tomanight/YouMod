@@ -189,7 +189,7 @@ static BOOL isDarkMode(UIView *view) {
 %hook YTPivotBarView
 - (UIView *)contentView {
     UIView *orig = %orig;
-    if IS_ENABLED(OLEDTheme) orig.backgroundColor = [UIColor blackColor];
+    if (IS_ENABLED(OLEDTheme)) orig.backgroundColor = [UIColor blackColor];
     return orig;
 }
 %end
