@@ -808,11 +808,6 @@ static void YouModAppendFFmpegKitLoadEntry(NSString *format, ...) {
     }
 }
 
-static void YouModAppendFFmpegKitSearchDirectory(NSMutableOrderedSet <NSString *> *directories, NSString *path) {
-    if (path.length == 0) return;
-    [directories addObject:path];
-}
-
 static NSArray <NSString *> *YouModFFmpegKitSearchDirectories(void) {
     NSMutableOrderedSet <NSString *> *directories = [NSMutableOrderedSet orderedSet];
     
@@ -854,19 +849,6 @@ static void YouModLoadFrameworkBinary(NSString *directory, NSString *frameworkNa
     if (directory.length == 0 || frameworkName.length == 0 || binaryName.length == 0) return;
     YouModDlopenPathIfPresent([[directory stringByAppendingPathComponent:[frameworkName stringByAppendingString:@".framework"]] stringByAppendingPathComponent:binaryName]);
     YouModDlopenPathIfPresent([[directory stringByAppendingPathComponent:[frameworkName stringByAppendingString:@".framework"]] stringByAppendingPathComponent:frameworkName]);
-}
-
-static void YouModLoadFrameworkBinaryByInstallName(NSString *frameworkName, NSString *binaryName) {
-    if (frameworkName.length == 0 || binaryName.length == 0) return;
-    NSString *relativePath = [NSString stringWithFormat:@"%@.framework/%@", frameworkName, binaryName];
-    NSArray <NSString *> *prefixes = @[
-        @"@rpath",
-        @"@executable_path/Frameworks",
-        @"@loader_path/Frameworks",
-        @"/Library/Frameworks",
-    ];
-    for (NSString *prefix in prefixes)
-        YouModDlopenPath([prefix stringByAppendingPathComponent:relativePath], NO);
 }
 
 static void YouModLoadFFmpegKitIfNeeded(void) {
